@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
-import djcommanddoc 
+import djcommanddoc
 
 
 def get_file(addr):
@@ -15,11 +15,11 @@ setup(
     author=djcommanddoc.__author__,
     author_email=djcommanddoc.__email__,
     install_requires=get_file('requirements.txt').splitlines(),
-    # tests_require=get_file('./requirements-tests.txt').splitlines(),
-    # long_description=get_file('README.rst'),
+    tests_require=get_file('./requirements-tests.txt').splitlines(),
+    long_description=get_file('README.rst'),
     license='BSD',
     url=djcommanddoc.__url__,
-    keywords=['django', 'sphinx',],
+    keywords=['django', 'sphinx', 'argparse', 'optparse'],
     packages=find_packages(exclude=[]),
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -34,10 +34,8 @@ setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
 )
-

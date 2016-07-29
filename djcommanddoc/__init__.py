@@ -1,5 +1,5 @@
 #!/user/bin/env python
-
+"""Sphinx plugin for help Django commands documentation."""
 VERSION = (0, 1)
 __version__ = '.'.join([str(i) for i in VERSION])
 __author__ = 'Anthony Monthe (ZuluPro)'
