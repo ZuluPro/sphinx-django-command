@@ -29,6 +29,14 @@ Be sure your Sphinx ``conf.py`` has access to the command that you want to
 document, the app could be found in ``sys.path`` and ``DJANGO_SETTINGS_MODULE``
 is available if necessary.
 
+Insert ``'djcommanddoc'`` in the ``extensions`` parameter: ::
+
+    extensions = [
+      ...
+      'djcommanddoc',
+      ...
+    ]
+
 
 Tests
 =====
