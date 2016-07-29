@@ -1,0 +1,7 @@
+*.py[co]
+*.sw[pon]
+sphinx_django_command.egg-info/
+.tox/
+.coverage
+dev
+dev/*

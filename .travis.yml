@@ -1,0 +1,27 @@
+language: python
+
+python:
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "pypy"
+  - "pypy3"
+
+install:
+  - TOX_ENV=py${TRAVIS_PYTHON_VERSION}
+  - pip install tox
+  - tox -e $TOX_ENV -- pip install coveralls
+
+script:
+  - tox -e $TOX_ENV
+
+after_success:
+  - tox -e $TOX_ENV -- coveralls
+
+matrix:
+  fast_finish: true
+  include:
+    - python: "3.4"
+      script: tox -e lint
+      env: TOX_ENV=lint
