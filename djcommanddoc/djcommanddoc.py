@@ -15,10 +15,7 @@ def visit_djcommand_node(self, node):
     command_name = node.rawsource.split('.')[-1]
     command_module = import_module(node.rawsource)
     parser = command_module.Command().create_parser('manage.py', command_name)
-    command_help = BytesIO()
-    parser.print_help(command_help)
-    command_help.seek(0)
-    self.body.append(command_help.read())
+    self.body.append(parser.format_help())
 
     self.body.append("</pre>")
 
